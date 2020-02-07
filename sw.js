@@ -34,15 +34,16 @@ for (var i = 0; i < games.length; i++) {
 }
 var contentToCache = appShellFiles.concat(gamesImages);
 
-self.addEventListener('install', (e) => {
-    console.log('[Service Worker] Install'); e.waitUntil(
-        caches.open(cacheName).then((cache) => {
-            console.log('[Service Worker] Caching all: app shell and content');
-            return cache.addAll(contentToCache);
-        })
+// Installing Service Worker
+self.addEventListener('install', function(e) {
+    console.log('[Service Worker] Install');
+    e.waitUntil(
+      caches.open(cacheName).then(function(cache) {
+        console.log('[Service Worker] Caching all: app shell and content');
+        return cache.addAll(contentToCache);
+      })
     );
-});
-
+ });
 self.addEventListener('fetch', (e) => {
     console.log('[Service Worker] Fetched resource ' + e.request.url);
 });
