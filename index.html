@@ -57,7 +57,21 @@
                 {{userMessage}}
                 </span>
     </div>
+    <script>
+        fetch("http://localhost:3000/getAllUsers") // Call the fetch function passing the url of the API as a parameter
+            .then(function(data) {
+                data.json().then(json => {
+                    
+                    console.log(json);
 
+                    }).catch(error => {
+                        console.log(error);
+                    });
+            })
+            .catch(function(error) {
+                console.log("FUCKING" + error);
+            });
+    </script>
     <script>
         var userform = new Vue({
             el: "#userform",
