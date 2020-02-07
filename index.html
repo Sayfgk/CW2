@@ -2,32 +2,41 @@
 <htmllang="en">
 
     <head>
-        <link rel="stylesheet"href="style.css">
-            <script scr="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script scr="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <link rel="manifest" href="/manifest.json">
     </head>
 
     <body>
         <div class="container">
             <header>
-                <img id='logo'src=""alt="logo">
-                    <div id='searchbox'>search box</div>
-                        <button>Login</button>
-                        <button>Registration</button>
+                <img id='logo' src="Wolf.png" alt="logo" style="width:300px;height:200px;">
+                <div id='searchbox'>search box</div>
+                <button>Login</button>
+                <button>Registration</button>
             </header>
             <aside>
-                <div class="filter">filter</div>
-                    <div class="filter">filter</div>
-                        <div class="filter">filter</div>
+                <center>
+                    <div class="home">Home</div>
+                    <div class="lessons">Lessons</div>
+                    <div class="user">User</div>
+                </center>
             </aside>
-            <main>
-                <div class="product">product</div>
-                    <div class="product">product</div>
-                        <div class="product">product</div>
-                            <div class="product">product</div>
-                                <div class="product">product</div>
-                                    <div class="product">product</div>
-            </main>
-            </div>
+            <center>
+                <main>
+                    <div class="product">English</div>
+                    <img src="english.png" alt="English" style="width:175px;height:150px;">
+                    <div class="product">History</div>
+                    <img src="History.jpg" alt="History" style="width:175px;height:150px;">
+                    <div class="product">IT</div>
+                    <img src="IT.png" alt="IT" style="width:175px;height:150px;">
+                    <div class="product">Maths</div>
+                    <img src="Maths.png" alt="Maths" style="width:175px;height:150px;">
+                    <div class="product">Science</div>
+                    <img src="Science.png" alt="Science" style="width:175px;height:150px;">
+                </main>
+            </center>
+        </div>
     </body>
 
     </html>
@@ -35,18 +44,18 @@
         <spanv-if='currentUser'>
             {{currentUser}}
             <button @click='signout'>Sign out</button>
+            </span>
+            <spanv-else>
+                email <input v-model='email'>
+                password <input type='password' v-model='password'>
+                <button v-on:click='signin'>Sign in</button>
+                <input type="radio" id="option1" value="student" v-model="userType"></input>
+                <label for="option1"> Provider</label>
+                <input type="radio" id="option2" value="provider" v-model="userType"></input>
+                <label for="option2"> Provider</label>
+                <button v-on:click='signup'>Sign up</button>
+                {{userMessage}}
                 </span>
-                <spanv-else>
-                    email <input v-model='email'>
-                        password <input type='password'v-model='password'>
-                            <button v-on:click='signin'>Sign in</button>
-                            <input type="radio" id="option1" value="student" v-model="userType"></input>
-                            <label for="option1" > Provider</label>
-                            <input type="radio" id="option2" value="provider" v-model="userType"></input>
-                            <label for="option2" > Provider</label>
-                            <button v-on:click='signup'>Sign up</button>
-                                    {{userMessage}}
-                                    </span>
     </div>
 
     <script>
@@ -76,9 +85,6 @@
                     // a user array should be used
                     localStorage.setItem('users', JSON.stringify(newUser))
                 },
-
-                var users = '',
-                var newEmail = this.email,
 
                 if(localStorage.getItem('users'));    // 'users' is an array of objects
         users = JSON.parse(localStorage.getItem('users'));
