@@ -9,6 +9,17 @@
     </head>
 
     <body>
+
+        <form id="search form">
+            <p>Search here</p>
+            <button @click='filteredlist'> Show me all the courses</button>
+            <input required type="text" id="search" v-model='search'>
+            <br><br>
+            <div v-for="course in filteredlist" class="course">
+                <li v-for=' (value, name) in course'>{{name}}: {{value}}</li>
+            </div>
+        </form>
+
         <div class="container">
             <header>
                 <img id='logo' src="Wolf.png" alt="logo" style="width:300px;height:200px;">
@@ -177,49 +188,49 @@
                     }
                     methods: {
                         filteredlist: function () {
-                        const data = { 'courses': this.courses };
-                        fetch('http://localhost:3000/lessons', {
-                            method: 'POST', // or 'PUT'
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify(data),
-                        })
-                            .then((response) => response.json)
-                            .then((data) => {
-                                console.log('Success', data)
+                            const data = { 'courses': this.courses };
+                            fetch('http://localhost:3000/lessons', {
+                                method: 'POST', // or 'PUT'
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(data),
                             })
-                            .catch((error) => {
-                                console.error('Error', error)
-                            });
+                                .then((response) => response.json)
+                                .then((data) => {
+                                    console.log('Success', data)
+                                })
+                                .catch((error) => {
+                                    console.error('Error', error)
+                                });
+                        }
                     }
-                }
 
-                if(users) {
-                    if (users.some(function (user) { returnuser.email === newEmail })) {
-                        alert('Email already exists!');
-                        return;
-                    }
-                    users.push({ 'email': newEmail, 'password': this.password });
-                    localStorage.setItem('users', JSON.stringify(users));
-                }
-        else {
-                    users =[{ 'email': newEmail, 'password': this.password }];
-                    localStorage.setItem('users', JSON.stringify(users));
-
-                }
-        signin: function () {
-                    var savedUser = JSON.parse(localStorage.getItem('users'));
-                    if (savedUser.email == this.email && savedUser.password == this.password) {
-                        this.currentUser = this.email;
+                    if (users) {
+                        if (users.some(function (user) { returnuser.email === newEmail })) {
+                            alert('Email already exists!');
+                            return;
+                        }
+                        users.push({ 'email': newEmail, 'password': this.password });
+                        localStorage.setItem('users', JSON.stringify(users));
                     }
                     else {
-                        this.userMessage = ' error: username or password is not correct.'; return;
+                        users = [{ 'email': newEmail, 'password': this.password }];
+                        localStorage.setItem('users', JSON.stringify(users));
+
                     }
-                }
-        signout: function () {
-                    this.currentUser = '';
-                    this.email = '';
-                    this.password = '';
-                }
+                    signin: function () {
+                        var savedUser = JSON.parse(localStorage.getItem('users'));
+                        if (savedUser.email == this.email && savedUser.password == this.password) {
+                            this.currentUser = this.email;
+                        }
+                        else {
+                            this.userMessage = ' error: username or password is not correct.'; return;
+                        }
+                    }
+                    signout: function () {
+                        this.currentUser = '';
+                        this.email = '';
+                        this.password = '';
+                    }
     </script>
