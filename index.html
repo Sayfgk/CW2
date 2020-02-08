@@ -18,82 +18,82 @@
             </header>
             <div id="coursesDispaly">
                 <h1> courses:</h1>
-              
+
                 <div v-for="course in courses" class="course">
-                    <ul> 
-                    <li v-for='(value, name) in course'>
-                        {{name}}: {{value}}
-                    </li>
-    
-    
-                     </ul>  
+                    <ul>
+                        <li v-for='(value, name) in course'>
+                            {{name}}: {{value}}
+                        </li>
+
+
+                    </ul>
                 </div>
             </div>
-    
+
             <div id="createAccount">
                 <h1 style="text-align:center">Create An Account </h1>
                 <h2 id="regmessage"></h2>
                 <form>
-                   
-                     <label for="email">Email</label>
-                     <input required type="email" name ="email" v-model="email"  >
-                     <label for="username">User Name</label>
-                     <input required type="text" name ="username" v-model="username">
-                     <label for="password">Password</label>
-                     <input required type="password" name ="password" v-model="password">
-                     <button v-on:click='createAccount'>submit</button>
-            
+
+                    <label for="email">Email</label>
+                    <input required type="email" name="email" v-model="email">
+                    <label for="username">User Name</label>
+                    <input required type="text" name="username" v-model="username">
+                    <label for="password">Password</label>
+                    <input required type="password" name="password" v-model="password">
+                    <button v-on:click='createAccount'>submit</button>
+
                 </form>
-                </div>
-    
-                <div id="createcourse">
-                    <h1 style="text-align:center">Createcourse</h1>
-                    <h2 id="regmessage"></h2>
-                    <form>
-                       
-                         <label for="topic">topic</label>
-                         <input required type="topic" name ="topic" v-model="topic"  >
-                         <label for="location">location</label>
-                         <input required type="location" name ="location" v-model="location">
-                         <label for="price">Price</label>
-                         <input required type="price" name ="price" v-model="price">
-                         <label for="provider">provider</label>
-                         <input required type="provider" name ="provider" v-model="provider">
-                         <label for="ranking">ranking</label>
-                         <input required type="ranking" name ="ranking" v-model="ranking">
-                         <button v-on:click='createcourse'>submit</button>
-                
-                    </form>
-                    </div>
-    
-                    <div id="updateCourse">
-                        <h1 style="text-align:center">updatecourse</h1>
-                        
-                        <form>
-                            <label >id</label>
-                            <input  type="text" name ="id" v-model="id">
-                             <label for="topic">topic</label>
-                             <input required type="topic" name ="topic" v-model="topic"  >
-                             <label for="location">location</label>
-                             <input required type="location" name ="location" v-model="location">
-                             <label for="price">Price</label>
-                             <input required type="price" name ="price" v-model="price">
-                             
-                             <button v-on:click='updateData'>submit</button>
-                    
-                        </form>
-                        </div>
-    
-                        <div id="deletecourses">
-                            <h1 style="text-align:center">deletecourse</h1>
-                            
-                            <form>
-                                <label >id</label>
-                                <input  type="text" name ="id" v-model="id">
-                                <button v-on:click='deletecourse'>DELETE</button>
-                            </form>
-                        </div>
-    
+            </div>
+
+            <div id="createcourse">
+                <h1 style="text-align:center">Createcourse</h1>
+                <h2 id="regmessage"></h2>
+                <form>
+
+                    <label for="topic">topic</label>
+                    <input required type="topic" name="topic" v-model="topic">
+                    <label for="location">location</label>
+                    <input required type="location" name="location" v-model="location">
+                    <label for="price">Price</label>
+                    <input required type="price" name="price" v-model="price">
+                    <label for="provider">provider</label>
+                    <input required type="provider" name="provider" v-model="provider">
+                    <label for="ranking">ranking</label>
+                    <input required type="ranking" name="ranking" v-model="ranking">
+                    <button v-on:click='createcourse'>submit</button>
+
+                </form>
+            </div>
+
+            <div id="updateCourse">
+                <h1 style="text-align:center">updatecourse</h1>
+
+                <form>
+                    <label>id</label>
+                    <input type="text" name="id" v-model="id">
+                    <label for="topic">topic</label>
+                    <input required type="topic" name="topic" v-model="topic">
+                    <label for="location">location</label>
+                    <input required type="location" name="location" v-model="location">
+                    <label for="price">Price</label>
+                    <input required type="price" name="price" v-model="price">
+
+                    <button v-on:click='updateData'>submit</button>
+
+                </form>
+            </div>
+
+            <div id="deletecourses">
+                <h1 style="text-align:center">deletecourse</h1>
+
+                <form>
+                    <label>id</label>
+                    <input type="text" name="id" v-model="id">
+                    <button v-on:click='deletecourse'>DELETE</button>
+                </form>
+            </div>
+
             <aside>
                 <center>
                     <div class="home">Home</div>
@@ -101,20 +101,20 @@
                     <div class="user">User</div>
                 </center>
             </aside>
-            
-                <main>
-                    <div class="product">English</div>
-                    <img src="english.png" alt="English" style="width:175px;height:150px;">
-                    <div class="product">History</div>
-                    <img src="History.jpg" alt="History" style="width:175px;height:150px;">
-                    <div class="product">IT</div>
-                    <img src="IT.png" alt="IT" style="width:175px;height:150px;">
-                    <div class="product">Maths</div>
-                    <img src="Maths.png" alt="Maths" style="width:175px;height:150px;">
-                    <div class="product">Science</div>
-                    <img src="Science.png" alt="Science" style="width:175px;height:150px;">
-                </main>
-            
+
+            <main>
+                <div class="product">English</div>
+                <img src="english.png" alt="English" style="width:175px;height:150px;">
+                <div class="product">History</div>
+                <img src="History.jpg" alt="History" style="width:175px;height:150px;">
+                <div class="product">IT</div>
+                <img src="IT.png" alt="IT" style="width:175px;height:150px;">
+                <div class="product">Maths</div>
+                <img src="Maths.png" alt="Maths" style="width:175px;height:150px;">
+                <div class="product">Science</div>
+                <img src="Science.png" alt="Science" style="width:175px;height:150px;">
+            </main>
+
         </div>
     </body>
 
@@ -138,17 +138,17 @@
     </div>
     <script>
         fetch("http://localhost:3000/getAllUsers") // Call the fetch function passing the url of the API as a parameter
-            .then(function(data) {
+            .then(function (data) {
                 data.json().then(json => {
-                    
+
                     console.log(json);
 
-                    }).catch(error => {
-                        console.log(error);
-                    });
+                }).catch(error => {
+                    console.log(error);
+                });
             })
-            .catch(function(error) {
-                console.log("FUCKING" + error);
+            .catch(function (error) {
+                console.log("testing" + error);
             });
     </script>
     <script>
@@ -175,38 +175,51 @@
                     var newUser = {
                         'email': this.email, 'password': this.password
                     }
-                    // a user array should be used
-                    localStorage.setItem('users', JSON.stringify(newUser))
-                },
+                    methods: {
+                        filteredlist: function () {
+                        const data = { 'courses': this.courses };
+                        fetch('http://localhost:3000/lessons', {
+                            method: 'POST', // or 'PUT'
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data),
+                        })
+                            .then((response) => response.json)
+                            .then((data) => {
+                                console.log('Success', data)
+                            })
+                            .catch((error) => {
+                                console.error('Error', error)
+                            });
+                    }
+                }
 
-                if(localStorage.getItem('users'));    // 'users' is an array of objects
-        users = JSON.parse(localStorage.getItem('users'));
-
-        if (users) {
-            if (users.some(function (user) { returnuser.email === newEmail })) {
-                alert('Email already exists!');
-                return;
-            }
-            users.push({ 'email': newEmail, 'password': this.password });
-            localStorage.setItem('users', JSON.stringify(users));
-        }
+                if(users) {
+                    if (users.some(function (user) { returnuser.email === newEmail })) {
+                        alert('Email already exists!');
+                        return;
+                    }
+                    users.push({ 'email': newEmail, 'password': this.password });
+                    localStorage.setItem('users', JSON.stringify(users));
+                }
         else {
-            users = [{ 'email': newEmail, 'password': this.password }];
-            localStorage.setItem('users', JSON.stringify(users));
+                    users =[{ 'email': newEmail, 'password': this.password }];
+                    localStorage.setItem('users', JSON.stringify(users));
 
-        }
+                }
         signin: function () {
-            var savedUser = JSON.parse(localStorage.getItem('users'));
-            if (savedUser.email == this.email && savedUser.password == this.password) {
-                this.currentUser = this.email;
-            }
-            else {
-                this.userMessage = ' error: username or password is not correct.'; return;
-            }
-        }
+                    var savedUser = JSON.parse(localStorage.getItem('users'));
+                    if (savedUser.email == this.email && savedUser.password == this.password) {
+                        this.currentUser = this.email;
+                    }
+                    else {
+                        this.userMessage = ' error: username or password is not correct.'; return;
+                    }
+                }
         signout: function () {
-            this.currentUser = '';
-            this.email = '';
-            this.password = '';
-        }
+                    this.currentUser = '';
+                    this.email = '';
+                    this.password = '';
+                }
     </script>
