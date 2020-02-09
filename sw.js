@@ -16,17 +16,21 @@ self.addEventListener('install', (e) => {
 
 var cacheName = 'manifest.json';
 var appShellFiles = [
-    '/desktop/cw2/english.png',
-    '/desktop/cw2/History.png',
-    '/desktop/cw2/IT.png',
-    '/desktop/cw2/Math.png',
-    '/desktop/cw2/Science.png',
+    '/desktop/cw2/Data/english.png',
+    '/desktop/cw2/Data/History.png',
+    '/desktop/cw2/Data/IT.png',
+    '/desktop/cw2/Data/Math.png',
+    '/desktop/cw2/Data/Science.png',
     '/desktop/cw2/index.html',
     '/desktop/cw2/style.css',
     '/desktop/cw2/sw.js',
+    '/desktop/cw2/Data/music.jpg',
+    '/desktop/cw2/Data/business.jpg',
+    '/desktop/cw2/Data/art.png',
+    '/desktop/cw2/Data/running.png',
+    '/desktop/cw2/Data/geo.png',
 
 ];
-
 
 var gamesImages = [];
 for (var i = 0; i < games.length; i++) {
@@ -62,11 +66,11 @@ self.addEventListener('fetch', function (e) {
         }));
 });
 
-var cacheName = 'manifest.json';
+var cacheName = 'js13kpwa.json';
 
 self.addEventListener('install', (e) => {
     e.waitUntil(
-        caches.open('js13kPWA-v2').then((cache) => {
+        caches.open('js13kPWA').then((cache) => {
             return cache.addAll(contentToCache);
         })
     );
