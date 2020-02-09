@@ -148,7 +148,8 @@
                 </span>
     </div>
     <script>
-        fetch("http://localhost:3000/getAllUsers") // Call the fetch function passing the url of the API as a parameter
+        // Call the fetch function 
+        fetch("http://localhost:3000/getAllUsers")
             .then(function (data) {
                 data.json().then(json => {
 
@@ -171,6 +172,7 @@
                 password: '',
                 userMessage: ''
             },
+            //below you will find the sign up function and the commands to send it to the database.
             methods: {
                 signup: function () {
                     this.userMessage = '';
@@ -205,7 +207,7 @@
                                 });
                         }
                     }
-
+                    //This message will show that the email already exists, if they have already created an account and its stored in the database.
                     if (users) {
                         if (users.some(function (user) { returnuser.email === newEmail })) {
                             alert('Email already exists!');
